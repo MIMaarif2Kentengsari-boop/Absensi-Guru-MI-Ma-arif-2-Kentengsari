@@ -17,6 +17,12 @@
     <p>Selamat Datang</p>
     <h2><span id="namaGuru">Guru</span></h2>
 
+<div class="status">
+🟢 Sistem Absensi Online
+</div>
+
+<div class="jam" id="jam"></div>
+
     <button onclick="absenMasuk()">ABSEN MASUK</button>
 
     <button onclick="absenPulang()">ABSEN PULANG</button>
@@ -42,6 +48,26 @@ if (nama) {
     document.getElementById("namaGuru").innerHTML = nama;
 }
 </script>
+
+<script>
+
+function tampilJam(){
+
+let sekarang = new Date();
+
+document.getElementById("jam").innerHTML =
+sekarang.toLocaleDateString("id-ID") +
+"<br>" +
+sekarang.toLocaleTimeString("id-ID");
+
+}
+
+setInterval(tampilJam,1000);
+
+tampilJam();
+
+</script>
+
 
 </body>
 </html>
